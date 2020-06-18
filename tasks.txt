@@ -1,0 +1,14 @@
+-- для удаления тудушки по id нужно сделать в todos.js новую функцию (чтобы удалять из файла)
+-- нужно реализовать endpoint'ы для запросов, список ниже:
+
+1) method: GET, url: /todos, response: [] // массив задач - уже рализовано  //done
+
+2) method: GET, url: /todos?completed=true, response: [] // массив выполненных задач (статус 200)  //  done
+
+3)method: GET, url: /todos?completed=false, response: [] // массив не выполненных задач (статус 200) // done
+
+4)method: POST, url: /todos, body: { title: "new todo"} - вернуть статус 201 и текст что задача создана - уже рализовано
+
+5)method: DELETE, url: /todos/:id - вернуть статус 204 ( где :id это id задачи) // done
+
+6)method: PUT, url: /todos/:id - вернуть статус 204 ( где :id это id задачи) 
