@@ -1,0 +1,120 @@
+
+1) получение всех блюд
+
+method: 'GET', url: /api/v1/foods ;
+status: 200;
+headers: {
+  "Content-Type", "application/json"
+}
+response: {
+  foods:[
+    {
+      img: 'url', 
+      price: 'num', 
+      category: type(sald, soup, chiken, beef, seafood ....), 
+      spiciness: num,
+      isHaveNuts: bool,
+      vegan: bool,
+      count: 0, 
+    }
+  ],
+}
+
+==================================
+
+2) получение Блюд на призентацию
+
+method: 'GET', url: /api/v1/food-previews ;
+status: 200;
+headers: {
+  "Content-Type", "application/json"
+}
+body: [{}, {}...]
+
+=================================
+
+3) получение блюд по категории        // food = экземпляр объека 
+
+ method: 'GET', `/api/v1/foods?category=${food.category}` ;
+ response: [] ,
+ headers: {
+  "Content-Type", "application/json"
+}
+
+=================================
+
+4)  лимит Max spiciness в блюде
+
+ method: 'GET', /api/v1/foods?spiciness-limit=${num} ;
+ response: [] ,
+ headers: {
+  "Content-Type", "application/json"
+
+}
+=================================
+
+5) isHaveNuts ??  
+
+ method: 'GET', /api/v1/foods?noNuts=true ;
+ response: [] ,
+ headers: {
+  "Content-Type", "application/json"
+}
+
+=================================
+
+
+5) веганские блюда
+
+ method: 'GET', /api/v1/foods?vegan=true ;
+ response: [] ,
+ headers: {
+  "Content-Type", "application/json"
+}
+
+=================================
+
+6) добавления блюда в корзину 
+
+method: POST, 
+
+url: //api/v1/foods/cart
+body: {
+  img: 'url', 
+  price: 'num' , 
+  category: type(sald, soup, chiken, beef, seafood ....), 
+  spiciness: num,
+  isHaveNuts: bool,
+  vegan: bool
+} 
+
+status: 201
+
+
+6) добавления блюда в корзину 
+
+method: GET, 
+
+url: //api/v1/foods/cart
+body: {
+  order:[food, food]
+  allPrice: num
+}
+status: 201
+
+
+6) отправка Формы 
+
+method: POST, 
+
+url: //api/v1/foods/cart
+body: {
+  name,
+  email,
+  phone,
+  address,
+  totalPrice,
+  foods: []
+}
+status: 202
+
